@@ -3,8 +3,12 @@
   "displayName": "Slamhaus Syntax",
   "description": "Syntax highlighting for Slamhaus markdown extensions with native Markdown support",
   "version": "0.0.1",
-  "publisher": "your-name-or-org",
+  "publisher": "Syed Assad Abbas Bokhari",
   "icon": "slamhaus-logo.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitboyb/Slamhaus-Syntax.git"
+  },
   "engines": {
     "vscode": "^1.100.0"
   },
@@ -41,4 +45,3 @@
     ]
   }
 }
-
