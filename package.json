@@ -1,0 +1,44 @@
+{
+  "name": "slamhaus-syntax",
+  "displayName": "Slamhaus Syntax",
+  "description": "Syntax highlighting for Slamhaus markdown extensions with native Markdown support",
+  "version": "0.0.1",
+  "publisher": "your-name-or-org",
+  "icon": "slamhaus-logo.png",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "slamhaus",
+        "aliases": [
+          "Slamhaus",
+          "slam"
+        ],
+        "extensions": [
+          ".slam",
+          ".smd"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "slamhaus",
+        "scopeName": "text.slamhaus.markdown",
+        "path": "./syntaxes/slamhaus.tmLanguage.json",
+        "injectTo": [
+          "text.html.markdown"
+        ],
+        "embeddedLanguages": {
+          "text.html.markdown": "markdown"
+        }
+      }
+    ]
+  }
+}
+

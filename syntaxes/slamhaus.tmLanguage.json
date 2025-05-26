@@ -1,0 +1,231 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Slamhaus Markdown",
+	"scopeName": "text.slamhaus.markdown",
+	"fileTypes": [
+		"slam",
+		"smd"
+	],
+	"injectionSelector": "L:text.html.markdown",
+	"patterns": [
+		{
+			"include": "#slamhaus-meta"
+		},
+		{
+			"include": "#slamhaus-blocks"
+		},
+		{
+			"include": "#slamhaus-inline"
+		},
+		{
+			"include": "#slamhaus-embed"
+		},
+		{
+			"include": "#slamhaus-declarations"
+		},
+		{
+			"include": "#slamhaus-closings"
+		},
+		{
+			"include": "#slamhaus-attributes"
+		},
+		{
+			"include": "text.html.markdown"
+		}
+	],
+	"repository": {
+		"slamhaus-meta": {
+			"patterns": [
+				{
+					"name": "meta.metadata.page.slamhaus",
+					"begin": "(^\\$page)(\\[)",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.declaration.slamhaus"
+						},
+						"2": {
+							"name": "punctuation.definition.attributes.begin.slamhaus"
+						}
+					},
+					"end": "\\](\\(\\))",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.definition.attributes.end.slamhaus"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#slamhaus-attributes"
+						}
+					]
+				},
+				{
+					"name": "meta.metadata.site.slamhaus",
+					"begin": "(^\\$site)(\\[)",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.declaration.slamhaus"
+						},
+						"2": {
+							"name": "punctuation.definition.attributes.begin.slamhaus"
+						}
+					},
+					"end": "\\](\\(\\))",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.definition.attributes.end.slamhaus"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#slamhaus-attributes"
+						}
+					]
+				}
+			]
+		},
+		"slamhaus-blocks": {
+			"patterns": [
+				{
+					"name": "meta.block.generic.slamhaus",
+					"begin": "^([:@?$!][a-z]+)(\\[)",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.declaration.slamhaus"
+						},
+						"2": {
+							"name": "punctuation.definition.attributes.begin.slamhaus"
+						}
+					},
+					"end": "\\](\\([^\\)]*\\))",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.definition.attributes.end.slamhaus"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#slamhaus-attributes"
+						}
+					]
+				}
+			]
+		},
+		"slamhaus-inline": {
+			"patterns": [
+				{
+					"name": "meta.inline.generic.slamhaus",
+					"begin": "([:@?$!][a-z]+)(\\[)",
+					"beginCaptures": {
+						"1": {
+							"name": "keyword.control.inline.slamhaus"
+						},
+						"2": {
+							"name": "punctuation.definition.attributes.begin.slamhaus"
+						}
+					},
+					"end": "\\](\\([^\\)]*\\))",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.definition.attributes.end.slamhaus"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#slamhaus-attributes"
+						}
+					]
+				}
+			]
+		},
+		"slamhaus-embed": {
+			"patterns": [
+				{
+					"name": "markup.embedded.custom.slamhaus",
+					"begin": "(!)(video|audio|svg|iframe)(\\[)",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.embed.slamhaus"
+						},
+						"2": {
+							"name": "keyword.control.embed.slamhaus"
+						},
+						"3": {
+							"name": "punctuation.definition.attributes.begin.slamhaus"
+						}
+					},
+					"end": "\\](\\([^\\)]*\\))",
+					"endCaptures": {
+						"1": {
+							"name": "punctuation.definition.attributes.end.slamhaus"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#slamhaus-attributes"
+						}
+					]
+				},
+				{
+					"name": "markup.embedded.image.slamhaus",
+					"match": "!\\[[^\\]]*\\]\\([^\\)]*\\)"
+				}
+			]
+		},
+		"slamhaus-declarations": {
+			"patterns": [
+				{
+					"match": "^\\$\\w+",
+					"name": "keyword.control.declaration.slamhaus"
+				},
+				{
+					"match": "^\\?\\w+",
+					"name": "keyword.control.declaration.slamhaus"
+				},
+				{
+					"match": "^:\\w+",
+					"name": "keyword.control.declaration.slamhaus"
+				},
+				{
+					"match": "^@\\w+",
+					"name": "keyword.control.declaration.slamhaus"
+				},
+				{
+					"match": "^!\\w+",
+					"name": "keyword.control.declaration.slamhaus"
+				}
+			]
+		},
+		"slamhaus-closings": {
+			"patterns": [
+				{
+					"match": "^:/\\w+",
+					"name": "keyword.control.closing.slamhaus"
+				},
+				{
+					"match": "^\\?/\\w+\\[\\]\\(\\)",
+					"name": "keyword.control.closing.slamhaus"
+				}
+			]
+		},
+		"slamhaus-attributes": {
+			"patterns": [
+				{
+					"name": "meta.attribute.pair.slamhaus",
+					"match": "(\\b\\w+)(\\s*:\\s*)(\"[^\"]*\")",
+					"captures": {
+						"1": {
+							"name": "variable.parameter.key.slamhaus"
+						},
+						"2": {
+							"name": "punctuation.separator.keyvalue.slamhaus"
+						},
+						"3": {
+							"name": "string.quoted.attribute.value.slamhaus"
+						}
+					}
+				}
+			]
+		}
+	}
+}

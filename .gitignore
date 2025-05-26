@@ -1,0 +1,16 @@
+# VS Code extension packaging
+*.vsix
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# VS Code workspace settings
+.vscode/
+vsc-extension-quickstart.md
