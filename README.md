@@ -1,8 +1,12 @@
+![](slamhaus-logo.png)
+
 # Slamhaus Syntax
 
-**Syntax highlighting for Slamhaus Markdown (.slam) files** — including custom tags, layout blocks, metadata, buttons, forms, and WebAssembly scripting.
+![](slamhaus-vscode-screenshot.png)
 
-Built to help you write, preview, and develop Slamhaus-powered sites with full editor support.
+**Syntax highlighting for [Slamhaus](https://github.com/bitboyb/Slamhaus) Markdown (.slam) files** — including custom tags, layout blocks, metadata, buttons, forms, and WebAssembly scripting.
+
+Built to help you write, preview, and develop [Slamhaus-powered sites](www.slamhaus.com) with full editor support.
 
 ---
 
