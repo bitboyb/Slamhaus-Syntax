@@ -2,9 +2,13 @@
 
 ![](slamhaus-vscode-screenshot.png)
 
-**Syntax highlighting for [Slamhaus](https://github.com/bitboyb/Slamhaus) Markdown (.slam) files** — including custom tags, layout blocks, metadata, buttons, forms, and WebAssembly scripting.
+**Syntax highlighting for [Slamhaus](www.slamhaus.com) Markdown (.slam) files** — including custom tags, layout blocks, metadata, buttons, forms, and WebAssembly scripting.
 
 Built to help you write, preview, and develop [Slamhaus-powered sites](www.slamhaus.com) with full editor support.
+
+[Download Slamhaus](https://github.com/bitboyb/Slamhaus/releases/tag/nightly)
+
+[Download VSCode Extension](https://open-vsx.org/extension/bitboyb/slamhaus-syntax)
 
 ---
 
