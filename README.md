@@ -1,5 +1,3 @@
-![](slamhaus-logo.png)
-
 # Slamhaus Syntax
 
 ![](slamhaus-vscode-screenshot.png)
